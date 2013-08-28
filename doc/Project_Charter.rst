@@ -12,11 +12,11 @@ The student organization PUCSSA holds a talent competition every year. The host 
 
 Project Objectives
 -----------------
-We will create a managing system for PUCSSA's talent competition consisting of several rounds, in which each contestant will show his or her talent in different fields. The system will allow contestants to view their qualification, schedule of competitions, and scores. It will also allow judges to manage the schedule of each competition, assign qualified contestants to next round, and to easily review the final results.
+We will create a managing system for PUCSSA's talent competition consisting of several rounds, in which each contestant will show his or her talent in different fields such as singing and dancing. The system will allow contestants to view their qualification, schedule of competitions, and scores. It will also allow judges to manage the schedule of each competition, to assign qualified contestants to next round, and to easily review the final results.
 
 Stakeholders
 ------------
-Competition judges and contestants.
+Judges and contestants in talent competitions.
 
 Project Deliverables
 --------------------
