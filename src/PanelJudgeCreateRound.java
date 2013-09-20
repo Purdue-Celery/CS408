@@ -17,10 +17,10 @@ public class PanelJudgeCreateRound extends JPanel implements ActionListener {
 	JTextField roomField = new JTextField();
 
 	JLabel nameLabel = new JLabel("Name");
-	JLabel periodLabel = new JLabel("Period");
+	JLabel periodLabel = new JLabel("Season");
 	JLabel yearLabel = new JLabel("Year");
-	JLabel meetLabel = new JLabel("Meets At");
-	JLabel roomLabel = new JLabel("TestRoom");
+	JLabel meetLabel = new JLabel("Time");
+	JLabel roomLabel = new JLabel("Location");
 	JButton submitButton = new JButton("Submit");
 	JButton backButton = new JButton("Go back");
 

@@ -12,7 +12,7 @@ import javax.swing.JTable;
 public class PanelJudgeReportScores extends JPanel implements ActionListener {
 	FrameMain f = null;
 
-	String[] columnNames = { "Round Name", "Period", "Year", "Contestant Name", "Current Score" };
+	String[] columnNames = { "Round Name", "Season", "Year", "Contestant Name", "Current Score" };
 
 	JTable table;
 	JButton backButton = new JButton("Go back");
