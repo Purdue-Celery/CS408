@@ -13,10 +13,10 @@ public class PanelJudgeModifyRound extends JPanel implements ActionListener {
 	FrameMain f = null;
 	JLabel selectLabel = new JLabel("Select a round");
 	JLabel nameLabel = new JLabel("Name");
-	JLabel periodLabel = new JLabel("Period");
+	JLabel periodLabel = new JLabel("Season");
 	JLabel yearLabel = new JLabel("Year");
-	JLabel meetLabel = new JLabel("Meets At");
-	JLabel roomLabel = new JLabel("TestRoom");
+	JLabel meetLabel = new JLabel("Time");
+	JLabel roomLabel = new JLabel("Location");
 	JButton submitButton = new JButton("Submit");
 	JButton backButton = new JButton("Go back");
 
