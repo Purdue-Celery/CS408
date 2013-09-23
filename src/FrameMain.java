@@ -31,7 +31,7 @@ public class FrameMain extends JFrame {
 		myQueryManager = new QueryManager(myDBServer.getConnection());
 		
 		setSize(WIDTH+9, HEIGHT+26);
-        setTitle("Purdue-CT");
+        setTitle("Talent Competition");
         setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
