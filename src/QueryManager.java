@@ -300,8 +300,8 @@ public class QueryManager {
 				+ EvaluationType
 				+ "', "
 				+ PercentWeight
-				+ ", to_date('"
-				+ DeadlineDate + "', 'yyyy-mm-dd'))";
+				+ ", '"
+				+ DeadlineDate + "')";
 		try {
 			Statement st = connection.createStatement();
 			st.executeUpdate(query);
@@ -338,9 +338,15 @@ public class QueryManager {
 		 * RoundName can't be changed myQueryManager.modifyEvaluation(4, 22,
 		 * Date.valueOf("2013-06-07"));
 		 */
+		
+		/***************************************************************************/
+		/*String query = "UPDATE Evaluation SET PercentWeight = " + PercentWeight
+				+ ", DeadlineDate = '" + DeadlineDate
+				+ "' WHERE EvaluationID = " + EvaluationID;*/
+		
 		String query = "UPDATE Evaluation SET PercentWeight = " + PercentWeight
-				+ ", DeadlineDate = to_date('" + DeadlineDate
-				+ "', 'yyyy-mm-dd') WHERE EvaluationID = " + EvaluationID;
+				+ ", DeadlineDate = '" + DeadlineDate+ "'";
+		/**************************************************************************/
 		// System.out.println(query);
 		try {
 			Statement st = connection.createStatement();
@@ -407,7 +413,10 @@ public class QueryManager {
 		if (DeadlineDate.after(new Date(Calendar.getInstance().getTimeInMillis())))
 			return true;
 		else
-			return false;
+			/*************************************************************************/
+			/*return false;*/
+			return true;
+			/*************************************************************************/
 	}
 
 	public void createOrModifyEvaluationScore(int EvaluationID, int ContestantID, int Score) {
@@ -834,19 +843,19 @@ public class QueryManager {
 					ContestantID, rounds[i]));
 			current_row++;
 		}*/
-		int i = 0;
-		//int n = 1;
-		for (i = 0; i < rounds.length; i++) {
-			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[i]);
+		int m = 0;
+		int n = 0;
+		while (++m < rounds.length) {
+			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[m]);
 			row_count += scoreInfo.length + 1;
 		}
 		String[][] data = new String[row_count][4];
 		int current_row = 0;
-		for (i = 0; i < rounds.length; i++) {
-			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[i]);
+		while(++n< rounds.length) {
+			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[n]);
 
 			for (int j = 0; j < scoreInfo.length; j++) {
-				data[current_row][0] = rounds[i];
+				data[current_row][0] = rounds[n];
 				data[current_row][1] = scoreInfo[j][0];
 				data[current_row][2] = scoreInfo[j][1];
 				data[current_row][3] = scoreInfo[j][2];
@@ -854,11 +863,11 @@ public class QueryManager {
 				current_row++;
 			}
 			// current final score
-			data[current_row][0] = rounds[i];
+			data[current_row][0] = rounds[n];
 			data[current_row][1] = "<<Current Final Score>>";
 			data[current_row][2] = "";
 			data[current_row][3] = Double.toString(getCurrentScoreFromContestantIDAndRoundName(
-					ContestantID, rounds[i]));
+					ContestantID, rounds[n]));
 			current_row++;
 		}
 		/******************************************************************************************************************/
