@@ -82,12 +82,19 @@ public class QueryManager {
 			e.printStackTrace();
 		}
 
-		if (password == null) {
-			return false;
-		} else if (password.equals(JudgePW))
+		/***************************************************/
+//		if (password == null) {
+//			return false;
+//		} else if (password.equals(JudgePW))
+//			return true;
+//		else
+//			return false;
+		
+		if (password.equals(JudgePW))
 			return true;
 		else
 			return false;
+		/***************************************************/
 	}
 
 	public String getJudgeName(int JudgeID) {
@@ -124,12 +131,18 @@ public class QueryManager {
 			System.out.println("Something is wrong");
 			e.printStackTrace();
 		}
-		if (password == null)
-			return false;
-		else if (password.equals(ContestantPW))
+		/***************************************************/
+//		if (password == null)
+//			return false;
+//		else if (password.equals(ContestantPW))
+//			return true;
+//		else
+//			return false;
+		if (password.equals(ContestantPW))
 			return true;
 		else
 			return false;
+		/***************************************************/
 	}
 
 	public String getContestantName(int ContestantID) {

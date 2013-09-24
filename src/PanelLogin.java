@@ -75,25 +75,33 @@ public class PanelLogin extends JPanel implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == loginButton) {
+			
 			if (judgeRadioButton.isSelected()) {
 				int JudgeID = Integer.valueOf(useridField.getText());
 				String JudgePW = passwordField.getText();
 				if (this.f.getMyQueryManager().verifyJudge(JudgeID, JudgePW)) {
 					this.f.setJudgeID(JudgeID);
-					useridField.setText("");
-					passwordField.setText("");
+					/***************************************************/
+//					useridField.setText("");
+//					passwordField.setText("");
+					/***************************************************/
 					this.setVisible(false);
 					this.f.getPanelJudgeMenu().setVisible(true);
 				} else {
 					System.out.println("Login fail. Try again");
 				}
-			} else if (contestantRadioButton.isSelected()) {
+			/***************************************************/
+//			} else if (contestantRadioButton.isSelected()) {
+			} else {
+			/***************************************************/
 				int ContestantID = Integer.valueOf(useridField.getText());
 				String ContestantPW = passwordField.getText();
 				if (this.f.getMyQueryManager().verifyContestant(ContestantID, ContestantPW)) {
 					this.f.setContestantID(ContestantID);
-					useridField.setText("");
-					passwordField.setText("");
+					/***************************************************/
+//					useridField.setText("");
+//					passwordField.setText("");
+					/***************************************************/
 					this.setVisible(false);
 					this.f.getPanelContestantMenu().setVisible(true);
 				} else {
