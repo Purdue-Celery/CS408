@@ -906,12 +906,7 @@ public class QueryManager {
 	}
 
 	public String[] getRoundListFromContestantID(int ContestantID) {
-		/******************************************************************************************************************/
-		String query = "SELECT C.RoundName FROM Round C JOIN Enrollment E ON C.RoundName = E.RoundName WHERE E.ContestantID = "
-				+ ContestantID;
-	
-		/*String query = "SELECT C.RoundName FROM Round C JOIN Enrollment E ON C.RoundName = E.RoundName"*/;
-		/******************************************************************************************************************/
+		String query = "SELECT C.RoundName FROM Round C JOIN Enrollment E ON C.RoundName = E.RoundName";
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
 		int row_count = 0;
 		try {
