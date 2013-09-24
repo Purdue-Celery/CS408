@@ -705,9 +705,15 @@ public class QueryManager {
 	}
 
 	public String[][] getEvaluationCalendarByContestant(int ContestantID) {
-		String query = "SELECT Ev.RoundName, Ev.EvaluationType, Ev.DeadlineDate " +
+		/******************************************************************************************************************/
+		/*String query = "SELECT Ev.RoundName, Ev.EvaluationType, Ev.DeadlineDate " +
 				"FROM (SELECT C.RoundName FROM Round C JOIN Enrollment E ON C.RoundName = E.RoundName WHERE E.ContestantID = "
+				+ ContestantID + ") T JOIN Evaluation Ev ON T.RoundName = Ev.RoundName";*/
+		
+		String query = "SELECT Ev.RoundName, Ev.EvaluationType, Ev.DeadlineDate " +
+				"FROM (SELECT C.RoundName FROM Round C JOIN Enrollment E WHERE E.ContestantID = "
 				+ ContestantID + ") T JOIN Evaluation Ev ON T.RoundName = Ev.RoundName";
+		/******************************************************************************************************************/
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
 //		System.out.println(query);
 //		System.out.println(query_count);
@@ -748,9 +754,14 @@ public class QueryManager {
 		// SELECT C.RoundName, C.Period, C.Year, C.TestTime, C.TestRoom FROM
 		// Round C, (SELECT RoundName FROM Enrollment where ContestantID = 1) T
 		// WHERE T.RoundName = C.RoundName;
-		String query = "SELECT C.RoundName, C.Period, C.Year, C.TestTime, C.TestRoom "
+		/******************************************************************************************************************/
+		/*String query = "SELECT C.RoundName, C.Period, C.Year, C.TestTime, C.TestRoom "
 				+ "FROM Round C, (SELECT RoundName FROM Enrollment where ContestantID = "
-				+ ContestantID + ") T WHERE T.RoundName = C.RoundName";
+				+ ContestantID + ") T WHERE T.RoundName = C.RoundName";*/
+		
+		String query = "SELECT C.RoundName, C.Period, C.Year, C.TestTime, C.TestRoom "
+				+ "FROM Round C";
+		/******************************************************************************************************************/
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
 //		System.out.println(query);
 //		System.out.println(query_count);
