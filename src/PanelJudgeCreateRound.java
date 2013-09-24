@@ -100,10 +100,12 @@ public class PanelJudgeCreateRound extends JPanel implements ActionListener {
 			this.f.getPanelJudgeMenu().setVisible(true);
 		}
 		this.setVisible(false);
-		nameField.setText("");
-		periodField.setText("");
-		yearField.setText("");
-		meetField.setText("");
-		roomField.setText("");
+		/***************************************************/
+//		nameField.setText("");
+//		periodField.setText("");
+//		yearField.setText("");
+//		meetField.setText("");
+//		roomField.setText("");
+		/***************************************************/
 	}
 }

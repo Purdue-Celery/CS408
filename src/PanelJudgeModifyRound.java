@@ -125,7 +125,7 @@ public class PanelJudgeModifyRound extends JPanel implements ActionListener {
 			meetField.setText("");
 			roomField.setText("");
 		} else if (e.getSource() == submitButton) {
-			if (comboBox.getSelectedIndex() != 0) {
+//			if (comboBox.getSelectedIndex() != 0) {
 				this.f.getMyQueryManager().modifyRound(comboBox.getSelectedItem().toString(), nameField.getText(),
 						periodField.getText(), Integer.valueOf(yearField.getText()), meetField.getText(),
 						roomField.getText());
@@ -133,13 +133,15 @@ public class PanelJudgeModifyRound extends JPanel implements ActionListener {
 				this.f.getPanelJudgeMenu().setVisible(true);
 				this.setVisible(false);
 				this.remove(comboBox);
-				nameField.setText("");
-				periodField.setText("");
-				yearField.setText("");
-				meetField.setText("");
-				roomField.setText("");
-			} else
-				System.out.println("You must select a round!");
+				/***************************************************/
+//				nameField.setText("");
+//				periodField.setText("");
+//				yearField.setText("");
+//				meetField.setText("");
+//				roomField.setText("");
+				/***************************************************/
+//			} else
+				//System.out.println("You must select a round!");
 		} else if (e.getSource() == comboBox) {
 			// TODO update round info when a round is selected
 		}

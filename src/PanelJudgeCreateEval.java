@@ -110,9 +110,11 @@ public class PanelJudgeCreateEval extends JPanel implements ActionListener {
 				this.f.getPanelJudgeMenu().setVisible(true);
 				this.setVisible(false);
 				this.remove(roundCombo);
-				this.typeField.setText("");
-				this.weightField.setText("");
-				this.deadlineField.setText("");
+				/***************************************************/
+//				this.typeField.setText("");
+//				this.weightField.setText("");
+//				this.deadlineField.setText("");
+				/***************************************************/
 			} else
 				System.out.println("You must select a round!");
 		}

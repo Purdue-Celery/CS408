@@ -105,8 +105,10 @@ public class PanelJudgeModifyEval extends JPanel implements ActionListener {
 			this.setVisible(false);
 			this.remove(roundCombo);
 			this.remove(typeCombo);
-			this.weightField.setText("");
-			this.deadlineField.setText("");
+			/***************************************************/
+//			this.weightField.setText("");
+//			this.deadlineField.setText("");
+			/***************************************************/
 		} else if (e.getSource() == submitButton) {
 			if (roundCombo.getSelectedIndex() != 0 && typeCombo.getSelectedIndex() != 0) {
 				if (this.f.getMyQueryManager().ableToModifyEvaluation(
@@ -120,8 +122,10 @@ public class PanelJudgeModifyEval extends JPanel implements ActionListener {
 					this.setVisible(false);
 					this.remove(roundCombo);
 					this.remove(typeCombo);
-					this.weightField.setText("");
-					this.deadlineField.setText("");
+					/***************************************************/
+//					this.weightField.setText("");
+//					this.deadlineField.setText("");
+					/***************************************************/
 				} else
 					System.out.println("You can't modify it because deadline has past");
 			} else

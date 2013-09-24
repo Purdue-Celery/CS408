@@ -87,7 +87,8 @@ public class PanelJudgeEnroll extends JPanel implements ActionListener {
 			this.remove(contestantBox);
 			this.remove(roundBox);
 		} else if (e.getSource() == submitButton) {
-			if (contestantBox.getSelectedIndex() != 0 && roundBox.getSelectedIndex() != 0) {
+			/***************************************************/
+//			if (contestantBox.getSelectedIndex() != 0 && roundBox.getSelectedIndex() != 0) {
 				this.f.getMyQueryManager().assignContestantToRound(
 						Integer.valueOf(contestantBox.getSelectedItem().toString()),
 						roundBox.getSelectedItem().toString());
@@ -96,8 +97,9 @@ public class PanelJudgeEnroll extends JPanel implements ActionListener {
 				this.setVisible(false);
 				this.remove(contestantBox);
 				this.remove(roundBox);
-			} else
-				System.out.println("You must select both the contestant and round!");
+//			} else
+//				System.out.println("You must select both the contestant and round!");
+			/***************************************************/
 		}
 
 	}
