@@ -208,7 +208,10 @@ public class QueryManager {
 	}
 
 	public String[] getRoundListFromJudgeID(int JudgeID) {
-		String query = "SELECT RoundName FROM Round WHERE JudgeID = " + JudgeID;
+		/**********************************************************************************************/
+		/*String query = "SELECT RoundName FROM Round WHERE JudgeID = " + JudgeID;*/
+		String query = "SELECT RoundName FROM Round";
+		/**********************************************************************************************/
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
 		int row_count = 0;
 		try {
@@ -372,8 +375,12 @@ public class QueryManager {
 	}
 
 	public String[][] getEvalListFromRoundName(String RoundName) {
-		String query = "SELECT EvaluationID, EvaluationType FROM Evaluation WHERE RoundName = '"
-				+ RoundName + "'";
+		
+		/***********************************************************************************************/
+		/*String query = "SELECT EvaluationID, EvaluationType FROM Evaluation WHERE RoundName = '"
+				+ RoundName + "'";*/
+		String query = "SELECT EvaluationID, EvaluationType FROM Evaluation";
+		/***********************************************************************************************/
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
 		int row_count = 0;
 		try {
@@ -496,8 +503,8 @@ public class QueryManager {
 		/* COURSENAME MEETS_AT ROOM STUNUM EVALNUM MSGNUM */
 		/* CS381 10:30 AM LWSN B155 6 4 2 */
 		/* CS426 4:30 PM HASS G066 3 4 2 */
-
-		String query = "SELECT C.RoundName, TestTime, TestRoom, "
+		/***********************************************************************************************************************************/
+		/*String query = "SELECT C.RoundName, TestTime, TestRoom, "
 				+ "IFNULL(En.StuNum,0) as StuNum, IFNULL(Ev.EvalNum,0) as EvalNum, IFNULL(M.MsgNum,0) as MsgNum "
 				+ "FROM (SELECT RoundName FROM Round WHERE JudgeID = "
 				+ JudgeID
@@ -505,7 +512,18 @@ public class QueryManager {
 				+ "LEFT JOIN Round C ON T.RoundName = C.RoundName "
 				+ "LEFT JOIN (SELECT RoundName, count(*) as StuNum FROM Enrollment GROUP BY RoundName) En ON T.RoundName = En.RoundName "
 				+ "LEFT JOIN (SELECT RoundName, count(*) as EvalNum FROM Evaluation GROUP BY RoundName) Ev ON T.RoundName = Ev.RoundName "
+				+ "LEFT JOIN (SELECT RoundName, count(*) as MsgNum FROM Notice GROUP BY RoundName) M ON T.RoundName = M.RoundName";*/
+		
+		String query = "SELECT C.RoundName, TestTime, TestRoom, "
+				+ "IFNULL(En.StuNum,0) as StuNum, IFNULL(Ev.EvalNum,0) as EvalNum, IFNULL(M.MsgNum,0) as MsgNum "
+				+ "FROM (SELECT RoundName FROM Round WHERE JudgeID = "
+				+ JudgeID
+				+ ") T "
+				+ "LEFT JOIN Round C ON T.RoundName = C.RoundName "
+				+ "RIGHT JOIN (SELECT RoundName, count(*) as StuNum FROM Enrollment GROUP BY RoundName) En ON T.RoundName = En.RoundName "
+				+ "LEFT JOIN (SELECT RoundName, count(*) as EvalNum FROM Evaluation GROUP BY RoundName) Ev ON T.RoundName = Ev.RoundName "
 				+ "LEFT JOIN (SELECT RoundName, count(*) as MsgNum FROM Notice GROUP BY RoundName) M ON T.RoundName = M.RoundName";
+		/***********************************************************************************************************************************/
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
 		// System.out.println(query);
 		// System.out.println(query_count);
