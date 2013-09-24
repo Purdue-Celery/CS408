@@ -678,10 +678,16 @@ public class QueryManager {
 		// EvaluationScore EvG JOIN Evaluation Ev ON EvG.EvaluationID =
 		// Ev.EvaluationID AND ContestantID = 1 GROUP BY Ev.RoundName HAVING
 		// Ev.RoundName = 'CS348';
-
-		String query = "SELECT SUM(Ev.PercentWeight * EvG.Score / 100.0) as CurrentScore "
+		
+		/******************************************************************************************************************/
+		/*String query = "SELECT SUM(Ev.PercentWeight * EvG.Score / 100.0) as CurrentScore "
+				+ "FROM EvaluationScore EvG JOIN Evaluation Ev ON EvG.EvaluationID = Ev.EvaluationID AND ContestantID = "
+				+ ContestantID + " GROUP BY Ev.RoundName HAVING Ev.RoundName = '" + RoundName + "'";*/
+		
+		String query = "SELECT SUM(Ev.PercentWeight * EvG.Score) as CurrentScore "
 				+ "FROM EvaluationScore EvG JOIN Evaluation Ev ON EvG.EvaluationID = Ev.EvaluationID AND ContestantID = "
 				+ ContestantID + " GROUP BY Ev.RoundName HAVING Ev.RoundName = '" + RoundName + "'";
+		/******************************************************************************************************************/
 		double score = 0;
 		try {
 			Statement st = connection.createStatement();
