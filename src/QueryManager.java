@@ -808,7 +808,8 @@ public class QueryManager {
 	public String[][] getScoreReportByContestant(int ContestantID) {
 		String[] rounds = getRoundListFromContestantID(ContestantID);
 		int row_count = 0;
-		for (int i = 0; i < rounds.length; i++) {
+		/******************************************************************************************************************/
+		/*for (int i = 0; i < rounds.length; i++) {
 			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[i]);
 			row_count += scoreInfo.length + 1;
 		}
@@ -832,7 +833,35 @@ public class QueryManager {
 			data[current_row][3] = Double.toString(getCurrentScoreFromContestantIDAndRoundName(
 					ContestantID, rounds[i]));
 			current_row++;
+		}*/
+		int m = 0;
+		int n = 0;
+		while (++m < rounds.length) {
+			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[m]);
+			row_count += scoreInfo.length + 1;
 		}
+		String[][] data = new String[row_count][4];
+		int current_row = 0;
+		while(++n< rounds.length) {
+			String[][] scoreInfo = getScoreInfoFromContestantIDAndRoundName(ContestantID, rounds[n]);
+
+			for (int j = 0; j < scoreInfo.length; j++) {
+				data[current_row][0] = rounds[n];
+				data[current_row][1] = scoreInfo[j][0];
+				data[current_row][2] = scoreInfo[j][1];
+				data[current_row][3] = scoreInfo[j][2];
+
+				current_row++;
+			}
+			// current final score
+			data[current_row][0] = rounds[n];
+			data[current_row][1] = "<<Current Final Score>>";
+			data[current_row][2] = "";
+			data[current_row][3] = Double.toString(getCurrentScoreFromContestantIDAndRoundName(
+					ContestantID, rounds[n]));
+			current_row++;
+		}
+		/******************************************************************************************************************/
 		return data;
 	}
 
