@@ -1,4 +1,8 @@
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 public class FrameMain extends JFrame {
 	private PanelLogin panelLogin = new PanelLogin(this);
@@ -51,19 +55,33 @@ public class FrameMain extends JFrame {
         this.add(panelContestantReportRoundes);
         this.add(panelContestantReportScores);
         
+        panelLogin.setBackground(new Color(255, 250, 205));
         panelLogin.setVisible(true);
+        panelJudgeMenu.setBackground(new Color(255, 250, 205));
         panelJudgeMenu.setVisible(false);
+        panelJudgeCreateRound.setBackground(new Color(255, 250, 205));
         panelJudgeCreateRound.setVisible(false);
+        panelJudgeModifyRound.setBackground(new Color(255, 250, 205));
         panelJudgeModifyRound.setVisible(false);
+        panelJudgeEnroll.setBackground(new Color(255, 250, 205));
         panelJudgeEnroll.setVisible(false);
+        panelJudgeCreateEval.setBackground(new Color(255, 250, 205));
         panelJudgeCreateEval.setVisible(false);
+        panelJudgeModifyEval.setBackground(new Color(255, 250, 205));
         panelJudgeModifyEval.setVisible(false);
+        panelJudgeEnterScore.setBackground(new Color(255, 250, 205));
         panelJudgeEnterScore.setVisible(false);
+        panelJudgeReportRoundes.setBackground(new Color(255, 250, 205));
         panelJudgeReportRoundes.setVisible(false);
+        panelJudgeReportScores.setBackground(new Color(255, 250, 205));
         panelJudgeReportScores.setVisible(false);
+        panelContestantMenu.setBackground(new Color(255, 250, 205));
         panelContestantMenu.setVisible(false);
+        panelContestantEvalCalendar.setBackground(new Color(255, 250, 205));
         panelContestantEvalCalendar.setVisible(false);
+        panelContestantReportRoundes.setBackground(new Color(255, 250, 205));
         panelContestantReportRoundes.setVisible(false);
+        panelContestantReportScores.setBackground(new Color(255, 250, 205));
         panelContestantReportScores.setVisible(false);
 
 	}

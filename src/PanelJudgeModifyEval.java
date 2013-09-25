@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -64,6 +65,7 @@ public class PanelJudgeModifyEval extends JPanel implements ActionListener {
 		c.gridwidth = 2;
 		c.weightx = 0.5;
 		c.fill = GridBagConstraints.NONE;
+		submitButton.setBackground(new Color(197, 179, 88));
 		this.add(submitButton, c);
 		submitButton.addActionListener(this);
 
@@ -71,6 +73,7 @@ public class PanelJudgeModifyEval extends JPanel implements ActionListener {
 		c.gridy = 5;
 		c.gridwidth = 2;
 		c.weightx = 0.5;
+		backButton.setBackground(new Color(197, 179, 88));
 		this.add(backButton, c);
 		backButton.addActionListener(this);
 	}

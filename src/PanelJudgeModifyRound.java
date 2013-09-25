@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -11,7 +12,7 @@ import javax.swing.JTextField;
 
 public class PanelJudgeModifyRound extends JPanel implements ActionListener {
 	FrameMain f = null;
-	JLabel selectLabel = new JLabel("Select a round");
+	JLabel selectLabel = new JLabel("Round");
 	JLabel nameLabel = new JLabel("Name");
 	JLabel periodLabel = new JLabel("Season");
 	JLabel yearLabel = new JLabel("Year");
@@ -85,6 +86,7 @@ public class PanelJudgeModifyRound extends JPanel implements ActionListener {
 		c.gridwidth = 2;
 		c.weightx = 0.5;
 		c.fill = GridBagConstraints.NONE;
+		submitButton.setBackground(new Color(197, 179, 88));
 		this.add(submitButton, c);
 		submitButton.addActionListener(this);
 
@@ -92,6 +94,7 @@ public class PanelJudgeModifyRound extends JPanel implements ActionListener {
 		c.gridy = 7;
 		c.gridwidth = 2;
 		c.weightx = 0.5;
+		backButton.setBackground(new Color(197, 179, 88));
 		this.add(backButton, c);
 		backButton.addActionListener(this);
 

@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,7 @@ public class PanelJudgeReportRoundes extends JPanel implements ActionListener {
 		this.setLayout(new BorderLayout());
 
 		backButton.setPreferredSize(new Dimension(this.getWidth(), 30));
+		backButton.setBackground(new Color(197, 179, 88));
 		this.add(backButton, BorderLayout.SOUTH);
 		backButton.addActionListener(this);
 	}

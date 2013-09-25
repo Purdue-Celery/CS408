@@ -209,7 +209,7 @@ public class QueryManager {
 
 	public String[] getRoundListFromJudgeID(int JudgeID) {
 		/**********************************************************************************************/
-		/*String query = "SELECT RoundName FROM Round WHERE JudgeID = " + JudgeID;*/
+		//String query = "SELECT RoundName FROM Round WHERE JudgeID = " + JudgeID;
 		String query = "SELECT RoundName FROM Round";
 		/**********************************************************************************************/
 		String query_count = "SELECT COUNT(*) as Count FROM (" + query + ") X";
